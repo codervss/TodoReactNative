@@ -30,7 +30,7 @@ const TaskView = ({fullView = false, item, isCurrentDay}) =>{
                 renderItem={({item, index})=><CheckComp fullView={fullView} item={item} index={index} toggleCb={(ind) => toggleCb(ind)} isCurrentDay={isCurrentDay} />}
                 initialNumToRender={5}
                 ListHeaderComponent={()=>(
-                    <TouchableOpacity onPress={()=>toggleShowFull(!showFull)}>
+                    <TouchableOpacity disabled={!fullView} onPress={()=>toggleShowFull(!showFull)}>
                         <SeperatorView fullView={fullView} textData={textData} textColor={textColor} iconName='plus' iconColor={iconColor} />
                     </TouchableOpacity>
                 )}
@@ -40,7 +40,7 @@ const TaskView = ({fullView = false, item, isCurrentDay}) =>{
                 removeClippedSubviews={Platform.OS === "android" ? true : false}
                 />
             :
-                <TouchableOpacity onPress={()=>toggleShowFull(!showFull)}>
+                <TouchableOpacity disabled={!fullView} onPress={()=>toggleShowFull(!showFull)}>
                     <SeperatorView fullView={fullView} textData={textData} textColor={textColor} iconName='plus' iconColor={iconColor} />
                 </TouchableOpacity>
             }
