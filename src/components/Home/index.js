@@ -11,6 +11,7 @@ const Home = ({navigation}) =>{
     
     return(
             <SafeAreaView style={styles.container} >
+                <ScrollView>
 
                 <View style={{paddingHorizontal : 20}}>
                     <Text style={styles.greetingStyle}>{greetingText()}</Text>
@@ -24,6 +25,9 @@ const Home = ({navigation}) =>{
                 </View>
 
                 <TaskList navigation={navigation} />
+
+                </ScrollView>
+                
                 </SafeAreaView>
     )
 }

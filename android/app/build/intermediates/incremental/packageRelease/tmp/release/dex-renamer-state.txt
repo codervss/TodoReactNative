@@ -1,4 +1,4 @@
-#Mon Jul 27 16:17:52 IST 2020
+#Mon Jul 27 18:05:55 IST 2020
 base.0=/Users/neosoft/Documents/Mine/ReactNative/todo/android/app/build/intermediates/dex/release/mergeDexRelease/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
