@@ -10,6 +10,7 @@ const SeperatorView = ({
   iconColor,
   iconSize,
   textColor,
+  boldTitle = false
 }) => {
   return (
     <View
@@ -17,14 +18,17 @@ const SeperatorView = ({
         styles.seperatorStyle,
         fullView ? {paddingBottom: 25, paddingTop: 5} : {},
       ]}>
-      <Text
-        style={[
-          styles.greetingStyle,
-          textColor ? {color: textColor} : {},
-          fullView ? {fontSize: 24} : {},
-        ]}>
-        {textData}
-      </Text>
+      <View style={{flex : 0.8}}>
+        <Text
+          style={[
+            styles.greetingStyle,
+            textColor ? {color: textColor} : {},
+            fullView ? {fontSize: 24} : {},
+            boldTitle || fullView ? {fontWeight : '700'} : {}
+          ]}>
+            {textData}
+        </Text>
+      </View>
       <IconComp name={iconName} color={iconColor || colors.black} />
     </View>
   );

@@ -91,10 +91,10 @@ class ClockComp extends React.Component {
             style={[
               styles.mover,
               {
-                transform: [{rotate: item}],
+                transform: [{rotate: item}]
               },
             ]}>
-            <View style={styles.ticks} />
+            <View style={[styles.ticks, index >= 42 && index <=52 ? { backgroundColor : colors.royalblue} : {}]} />
           </View>
             )
         })}
@@ -132,6 +132,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: SIZE / 2,
+    // elevation : 2
   },
   hours: {  
     backgroundColor: colors.royalblue,
@@ -148,16 +149,18 @@ const styles = StyleSheet.create({
     width: 3,
   },
   seconds: {
-    backgroundColor: colors.primary,
+    backgroundColor: colors.black,
     height: '25%',
     marginBottom: '25%',
     width: 2,
-    borderRadius: 42
+    borderRadius: 42,
   },
   ticks: {
-    backgroundColor: colors.white,
-    height: '35%',
-    marginBottom: '35%',
+    backgroundColor: colors.lightsteelblue,
+    height: '5%',
+    marginBottom: '65%',
+    // height: '35%',
+    // marginBottom: '35%',
     borderRadius: 5,
     width: 2
   },
@@ -167,6 +170,7 @@ const styles = StyleSheet.create({
     borderRadius: SIZE * 0.4,
     backgroundColor: '#fff',
     position: 'absolute',
+    // elevation : 2
   },
   smallQuadran: {
     width: 10,
@@ -176,5 +180,6 @@ const styles = StyleSheet.create({
     borderColor: colors.black,
     borderWidth: 0.5,
     position: 'absolute',
+    // elevation : 3
   },
 });

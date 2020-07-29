@@ -9,7 +9,6 @@ const TaskList = ({navigation}) =>{
     const {data} = todo
 
     return(
-        <View style={styles.container}>
         <FlatList
             data = {data}
             horizontal={true}
@@ -21,12 +20,7 @@ const TaskList = ({navigation}) =>{
             keyExtractor={(item, index)=>"Task_" + index.toString()}
             removeClippedSubviews={Platform.OS == "android" ? true : false}
         />
-        </View>
     )
 }
 
 export default TaskList
-
-const styles= StyleSheet.create({
-    container : {paddingTop : 20}
-})

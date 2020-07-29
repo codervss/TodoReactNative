@@ -22,16 +22,19 @@ const ToDo = ({route}) =>{
     }, [])
     
     return(
-        <SafeAreaView style={styles.container} >
+        <SafeAreaView>
             <FlatList
             data = {data}
             showsVerticalScrollIndicator={false}
             renderItem={({item, index})=>{
                 const isCurrentDay = item.date === moment().format('DD-MM-YYYY')
                 const backgroundColor = isCurrentDay ? colors.white : colors.royalblue
+                const backViewColor = isCurrentDay ? colors.primary : colors.white
                 return(
+                    <View style={[styles.container,{ backgroundColor : backViewColor}]}>
                     <View style={{ backgroundColor, borderTopRightRadius : 25 }}>
                         <TaskView item={item} fullView={true} index={index} isCurrentDay={isCurrentDay} />
+                    </View>
                     </View>
                 )
             }}
@@ -47,7 +50,6 @@ const ToDo = ({route}) =>{
               }}
             initialNumToRender={5}
             maxToRenderPerBatch={5}
-            // ItemSeparatorComponent={()=><View style={{height : 5, backgroundColor : colors.white}} />}
             keyExtractor={(item, index)=>"Task_" + index.toString()}
             removeClippedSubviews={Platform.OS == "android" ? true : false}
         />
@@ -58,5 +60,5 @@ const ToDo = ({route}) =>{
 export default ToDo
 
 const styles = StyleSheet.create({
-    container : {flex : 1, backgroundColor : colors.primary, paddingTop : 10},
+    container : {flex : 1},
 })

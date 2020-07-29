@@ -19,9 +19,9 @@ const TaskView = ({fullView = false, item, isCurrentDay}) =>{
     const toggleCb = (ind) =>{
         dispatch( toggleTodo({date : item.date, taskIndex : ind }) )
     }
-
+    
     return(
-        <View style={{padding : 25}}>
+        <View style={{padding : 25, position : 'relative'}}>
             {
             showFull ?
                 <FlatList

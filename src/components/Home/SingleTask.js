@@ -14,10 +14,20 @@ const SingleTask = ({item , index, navigation}) =>{
     const {data} = todo
     
     return(
-        <View style={[styles.card, { backgroundColor, marginRight : data.length - 1 === index ? 20 : 0 }]}>
+        <View>
+
+        <View style={[styles.card, { backgroundColor : colors.lightgray, position : 'absolute' }]}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Todo',{ currentIndex : index})}>
+                <TaskView item={item} index={index} isCurrentDay={isCurrentDay} />
+            </TouchableOpacity>
+        </View>
+
+        <View style={[styles.card, { backgroundColor, marginRight : data.length - 1 === index ? 30 : 0, elevation : 1, bottom : 10, right : 10 }]}>
             <TouchableOpacity onPress={()=>navigation.navigate('Todo',{ currentIndex : index})}>
             <TaskView item={item} index={index} isCurrentDay={isCurrentDay} />
             </TouchableOpacity>
+        </View>
+
         </View>
     )
 }
@@ -26,18 +36,11 @@ export default SingleTask
 
 const styles = StyleSheet.create({
     card : {
-        width : width * 0.7, 
-        shadowColor: colors.red,
-        marginLeft : 20,
-        // borderWidth: 5,
+        width : width * 0.7,
+        marginLeft : 30,
+        marginTop : 30,
         borderRadius: 15,
-        borderColor: colors.lightgray,
-        // borderBottomWidth: 15,
-        // borderRightWidth : 15,
-        // shadowOffset: { width: 10, height: 10 },
-        // shadowOpacity: 0.9,
-        // shadowRadius: 5,
-        elevation: 50,
+        position : 'relative',
 
 }
 })

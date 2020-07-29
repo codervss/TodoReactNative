@@ -21,7 +21,7 @@ const Home = ({navigation}) =>{
                 <ClockComp />
 
                 <View style={{paddingHorizontal : 20}}>
-                    <SeperatorView textData='Tasks Lists' iconName='plussquare' iconColor={colors.red} />
+                    <SeperatorView textData='Tasks Lists' boldTitle={true} iconName='plussquare' iconColor={colors.red} />
                 </View>
 
                 <TaskList navigation={navigation} />
@@ -36,6 +36,6 @@ export default Home
 
 const styles = StyleSheet.create({
     container : {flex : 1, backgroundColor : colors.primary, paddingVertical : 10},
-    greetingStyle : {fontSize : 24, color : colors.dimgray},
-    nameStyle : {fontSize : 20, color : colors.royalblue, fontWeight : '700'},
+    greetingStyle : {fontSize : 30, color : colors.dimgray},
+    nameStyle : {fontSize : 18, color : colors.royalblue, fontWeight : '700'},
 })

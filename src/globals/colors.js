@@ -128,6 +128,7 @@ const colors = {
     "sandybrown": "#f4a460",
     "seagreen": "#2e8b57",
     "seashell": "#fff5ee",
+    "shadow" : "#8a795d",
     "sienna": "#a0522d",
     "silver": "#c0c0c0",
     "skyblue": "#87ceeb",
